@@ -1,0 +1,32 @@
+{
+	"name": "${localWorkspaceFolderBasename}",
+	// Build from Dockerfile with non-root dev user
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": { "USERNAME": "dev" }
+	},
+	"remoteUser": "dev",
+	// Change default workspace to inside the non-root user
+	"workspaceMount": "source=${localWorkspaceFolder},target=/home/dev/${localWorkspaceFolderBasename},type=bind",
+	"workspaceFolder": "/home/dev/${localWorkspaceFolderBasename}",
+	// Add VSCode extensions
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"cschlosser.doxdocgen",
+				"GitHub.vscode-pull-request-github",
+				"DavidAnson.vscode-markdownlint",
+				"ms-vscode.hexeditor",
+				"mhutchie.git-graph",
+				"GitHub.copilot",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"VisualStudioExptTeam.intellicode-api-usage-examples",
+				"ms-python.vscode-pylance",
+				"ms-python.python",
+				"donjayamanne.python-environment-manager",
+				"donjayamanne.python-extension-pack",
+				"teros-technology.teroshdl"
+			]
+		}
+	}
+}
