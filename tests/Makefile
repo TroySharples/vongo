@@ -1,11 +1,16 @@
 SIM           ?= ghdl
 TOPLEVEL_LANG ?= vhdl
 
-VHDL_SOURCES += ../dut.vhd
+VHDL_SOURCES += ../parent.vhd
+VHDL_SOURCES += ../child.vhd
 
-COMPILE_ARGS += --std=08
+EXTRA_ARGS += --std=08
 
-TOPLEVEL = dut
-MODULE   = dut_tb
+ifneq ($(WAVE),)
+SIM_ARGS += --wave=$(WAVE)
+endif
+
+TOPLEVEL = parent
+MODULE   = parent_tb
 
 include $(shell cocotb-config --makefiles)/Makefile.sim

@@ -2,10 +2,10 @@ FROM ubuntu:latest
 
 # Install APT packages
 RUN apt update -yqq && apt upgrade -yqq \
-    && DEBIAN_FRONTEND=noninteractive apt install -yqq sudo build-essential git ghdl python3 python3-pip yosys gtkwave
+    && DEBIAN_FRONTEND=noninteractive apt install -yqq sudo build-essential git ghdl python3 python3-pip gtkwave
 
 # Install PIP packages
-RUN pip install cocotb vunit-hdl edalize yowasp-yosys
+RUN pip install cocotb vunit-hdl
 
 # Add a non-root user
 ARG USERNAME

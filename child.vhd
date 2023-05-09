@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity dut is
+entity child is
     generic (
         AXIS_BYTES : positive := 8
     );
@@ -23,7 +23,7 @@ entity dut is
     );
 end entity;
 
-architecture rtl of dut is
+architecture rtl of child is
 begin
 
     s_axis_tready <= m_axis_tready or not m_axis_tvalid;
@@ -31,13 +31,13 @@ begin
     process(aclk)
     begin
         if rising_edge(aclk) then
-            if s_axis_tready = '1' then
+            if s_axis_tready then
                 m_axis_tvalid <= s_axis_tvalid;
                 m_axis_tdata  <= s_axis_tdata;
                 m_axis_tkeep  <= s_axis_tkeep;
                 m_axis_tlast  <= s_axis_tlast;
             end if;
-            if aresetn = '0' then
+            if not aresetn then
                 m_axis_tvalid <= '0';
             end if;
         end if;

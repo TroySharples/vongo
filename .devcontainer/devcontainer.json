@@ -18,14 +18,16 @@
 				"DavidAnson.vscode-markdownlint",
 				"ms-vscode.hexeditor",
 				"mhutchie.git-graph",
-				"GitHub.copilot",
 				"VisualStudioExptTeam.vscodeintellicode",
 				"VisualStudioExptTeam.intellicode-api-usage-examples",
 				"ms-python.vscode-pylance",
 				"ms-python.python",
 				"donjayamanne.python-environment-manager",
 				"donjayamanne.python-extension-pack",
-				"teros-technology.teroshdl"
+				"hbohlin.vhdl-ls",
+				"GitHub.copilot-nightly",
+				"GitHub.copilot-labs",
+				"spencerwmiles.vscode-task-buttons"
 			]
 		}
 	}
